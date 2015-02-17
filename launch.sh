@@ -18,7 +18,7 @@ function launch_node {
         	-h ${NODE}.rabbit.com \
         	--dns $(docker inspect -f '{{.NetworkSettings.IPAddress}}' dns) \
         	--dns-search rabbit.com \
-        	jrlangford/rabbitmq
+		jrlangford/rabbitmq:cluster-ready
 }
 
 launch_node $NODE1 15672
